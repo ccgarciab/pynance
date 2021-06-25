@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <th scope="col">
+                Symbol
+            </th>
+            <th scope="col">
+                Price
+            </th>
+        </thead>
+        <tr>
+            <td>
+                {{ result["symbol"] }}
+            </td>
+            <td>
+                {{ result["price"]|usd }}
+            </td>
+        </tr>
+    </table>
+{% endblock %}

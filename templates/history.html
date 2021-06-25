@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transaction history
+{% endblock %}
+
+{% block main %}
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <th scope="col">
+                Symbol
+            </th>
+            <th scope="col">
+                Shares
+            </th>
+            <th scope="col">
+                Price
+            </th>
+            <th scope="col">
+                Transacted
+            </th>
+        </thead>
+        {% for tran in trans %}
+            <tr>
+                <td>
+                    {{ tran["symbol"] }}
+                </td>
+                <td>
+                    {{ tran["shares"] }}
+                </td>
+                <td>
+                    {{ tran["price"]|usd }}
+                </td>
+                <td>
+                    {{ tran["time"] }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
